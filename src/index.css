@@ -1,13 +1,91 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, html {
+  width: fit-content;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: 'Inter';
+  font-size: 20px;
+}
+header {
+  background-color: #007BFF;
+  color: #FFFFFF;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+nav {
+  background-color: #F8F9FA;
+  overflow: hidden;
+  border-bottom: 1px solid #DDD;
+}
+nav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+section {
+  padding: 20px;
+}
+.content {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 24px;
+  width: 100%;
+}
+/* Basic responsiveness to adjust layout on very small devices */
+@media (max-width: 320px) {
+  header, nav a, footer {
+      font-size: 14px;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.background-bg {
+  background-image: url("./assets/userBck.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 10rem;
+}
+
+.home-bg {
+  background-image: url("./assets/Frame\ 36248.png");
+  background-position: center;
+}
+
+.footer-bg {
+  background-image: url("./assets/middle-left-2.png.png");
+  background-position: -7rem 2rem;
+  background-repeat: no-repeat;
+  background-size: 20rem;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the overlay is above other content */
+  pointer-events: none; /* Make the overlay not clickable */
+}
+
+.login-popup {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  pointer-events: auto; /* Enable interactions for the popup content */
 }
