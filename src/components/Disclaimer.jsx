@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import close from "../assets/close.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import copartner from "../assets/copartner-black.png";
 
 const Disclaimer = () => {
+  
+  let navigate = useNavigate();
 
   const [error, setError] = useState(null)
+
+  const handleAgree = () => {
+    sessionStorage.setItem('userAgreedToDisclaimer', 'true');
+    navigate('/');
+  };
 
   const handleClose = () => {
     setError("Click 'I Agree' to continue!")
@@ -23,12 +30,12 @@ const Disclaimer = () => {
         <a href="https://copartner.in/" target="_blank" rel="noreferrer">
           <img className="w-16 h-6 mb-2 mx-auto" src={copartner} alt="" />
         </a>
-        <Link
-          to="/"
+        <button
+          onClick={handleAgree}
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
         >
           I Agree
-        </Link>
+        </button>
       <div className="text-red-500 mx-auto py-2">{error}</div>
       </div>
       <button onClick={handleClose} className="absolute top-1/3 right-4">

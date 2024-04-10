@@ -12,12 +12,12 @@ import Success from "./components/Success";
 import Disclaimer from "./components/Disclaimer";
 
 function App() {
-  
-  const token = sessionStorage.getItem('token');
 
+  const token = sessionStorage.getItem("token");
+  
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" errorElement={<ErrorPage />} element={<Main token={token} />}>
+      <Route path="/" errorElement={<ErrorPage />} element={ <Main token={token} /> }>
         <Route path="login" element={<Login />} />
         <Route path="otp" element={<OTP />} />
         <Route path="success" element={<Success />} />

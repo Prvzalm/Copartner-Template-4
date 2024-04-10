@@ -83,7 +83,7 @@ const Homepage = ({ token }) => {
                 Open your demat account with any brokerage platform with
                 Copartner and start your trading journey.
               </div>
-              <button className="text-white bg-black rounded mb-4 px-6 py-1 mt-4">
+              <button className="text-white bg-[black] rounded mb-4 px-6 py-1 mt-4">
                 <span className="text-sm font-normal">Open Now</span>
               </button>
             </section>
