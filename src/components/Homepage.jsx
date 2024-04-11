@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { expertise_data } from "../constants";
 import { arrow, copartner, option, shubham, stars, telegram, verify } from "../assets";
+import Popup from './Popup';
 
 const Homepage = ({ token }) => {
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+
   const navigate = useNavigate();
 
   const handleClickLink = (link) => {
@@ -78,14 +90,18 @@ const Homepage = ({ token }) => {
                 </div>
               </div>
             </div>
-            <section className="text-center font-bold text-xl">
-              <div>
-                Open your demat account with any brokerage platform with
-                Copartner and start your trading journey.
-              </div>
-              <button className="text-white bg-[black] rounded mb-4 px-6 py-1 mt-4">
+            <section className="text-center font-bold text-sm">
+              <p className="text-sm opacity-80">
+              Don’t Have Demat Account ?
+              </p>
+              <button onClick={openPopup} className="text-white bg-[black] rounded mb-4 px-6 py-1 mt-4">
                 <span className="text-sm font-normal">Open Now</span>
               </button>
+              <Popup isOpen={isPopupOpen} onClose={closePopup} />
+            </section>
+            <section className="text-center pt-0">
+              <p className="text-xl">Disclaimer</p>
+              <p className="opacity-80 text-sm">Investments in securities market are subject to market risks, read all the related documents carefully before investing. For further disclosures visit our website</p>
             </section>
           </section>
         );

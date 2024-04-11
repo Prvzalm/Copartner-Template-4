@@ -10,9 +10,9 @@ const Success = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate('/');
-      window.open(link, '_blank');
-      window.location.reload();
+      navigate('/').then(()=>window.location.href = link);
+      // window.open(link, '_blank');
+      // window.location.reload();
     }, 1500);
     return () => clearTimeout(timer);
   }, [navigate, link]);
@@ -21,8 +21,8 @@ const Success = () => {
     <div className="popup-overlay">
       <div className="login-popup">
         <div className="w-full h-full flex items-center justify-center">
-          <div className="w-[340px] h-[285px] bg-[#06030E] border border-[#18181B] rounded-[10px] px-6 flex flex-col gap-[3rem] justify-around">
-            <div className="w-[293px] h-[60px] flex flex-col items-center text-center text-lightWhite p-6">
+          <div className="w-[340px] h-[285px] bg-[white] border border-[#18181B] rounded-[10px] px-6 flex flex-col gap-[3rem] justify-around">
+            <div className="w-[293px] h-[60px] flex flex-col items-center text-center text-black p-6">
               <span className="w-[155px] h-[24px] font-[500] text-[20px] leading-[24px] mb-4">
                 Verification
               </span>

@@ -6,6 +6,12 @@ import stars from './stars.png';
 import option from "../assets/IMG_4368.png";
 import verify from "../assets/image 30.png";
 import copartner from "../assets/IMG_4367.png";
+import angelOne from './AngelOne.png'
+import paisa5 from './5Paisa.png'
+import kotak from './Kotak.png'
+import mStock from './MStock.png'
+import adityaBirla from './Birla.png'
+import upStock from './UpStock.png'
 
 export {
     userBck,
@@ -15,5 +21,11 @@ export {
     stars,
     option,
     verify,
-    copartner
+    copartner,
+    angelOne,
+    paisa5,
+    kotak,
+    mStock,
+    adityaBirla,
+    upStock
 }

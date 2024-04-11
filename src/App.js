@@ -9,7 +9,7 @@ import ErrorPage from "./components/ErrorPage";
 import Login from "./components/Login";
 import OTP from "./components/OTP";
 import Success from "./components/Success";
-import Disclaimer from "./components/Disclaimer";
+// import Disclaimer from "./components/Disclaimer";
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="otp" element={<OTP />} />
         <Route path="success" element={<Success />} />
-        <Route path="disclaimer" element={<Disclaimer />} />
+        {/* <Route path="disclaimer" element={<Disclaimer />} /> */}
       </Route>
     )
   );
