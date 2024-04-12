@@ -65,7 +65,7 @@ const Popup = ({ isOpen, onClose }) => {
             className="w-full flex items-center shadow-sm bg-white rounded-2xl py-2"
           >
             <img className="w-8 h-8 mx-2" src={upStock} alt="" />
-            <p className="text-sm">Up Stock</p>
+            <p className="text-sm">Up Stox</p>
           </a>
         </div>
         <button className="close-btn mb-2 w-2/3" onClick={onClose}>
