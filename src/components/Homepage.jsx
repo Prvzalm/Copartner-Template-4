@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { expertise_data } from "../constants";
 import { arrow, copartner, option, shubham, stars, telegram, verify } from "../assets";
 import Popup from './Popup';
 
-const Homepage = ({ token }) => {
+const Homepage = () => {
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -16,14 +16,14 @@ const Homepage = ({ token }) => {
     setIsPopupOpen(false);
   };
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleClickLink = (link) => {
-    if (!token) {
-      navigate("/login", { state: { link } });
-    } else {
-      window.open(link, "_blank");
-    }
+    // if (!token) {
+    //   navigate("/login", { state: { link } });
+    // } else {
+      window.open(link);
+    // }
   };
 
   return (
