@@ -10,9 +10,9 @@ const Success = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate('/').then(()=>window.location.href = link);
-      // window.open(link, '_blank');
-      // window.location.reload();
+      window.open(link, '_blank');
+      navigate('/');
+      window.location.reload();
     }, 1500);
     return () => clearTimeout(timer);
   }, [navigate, link]);
