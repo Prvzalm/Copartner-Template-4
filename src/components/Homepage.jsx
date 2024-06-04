@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import { expertise_data } from "../constants";
-import { arrow, copartner, option, shubham, stars, telegram, verify } from "../assets";
+import { arrow, copartner, copartnerBlack, option, shubham, stars, telegram, verify } from "../assets";
 import Popup from './Popup';
 
 const Homepage = () => {
@@ -32,10 +32,11 @@ const Homepage = () => {
         return (
           <section key={expert.id}>
             <div className="flex">
-              <img className="w-12 h-12 mr-4" src={option} alt="logo" />
+              {/* <img className="w-12 h-12 mr-4" src={option} alt="logo" /> */}
               <div>
-                <h1 className="font-bold">OPTION EMPIRE</h1>
-                <p className="opacity-50 text-xs">Welcome To The Rich Club</p>
+                <img className="w-32" src={copartnerBlack} alt="" />
+                {/* <h1 className="font-bold">Copartner.in</h1> */}
+                {/* <p className="opacity-50 text-xs">Welcome To The Rich Club</p> */}
               </div>
             </div>
             <div className="content mt-8 w-full border-2 rounded-2xl background-bg">

@@ -132,3 +132,18 @@ footer {
 .overlay.open {
   display: block; /* Show the overlay when 'open' class is added */
 }
+
+.marquee {
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
