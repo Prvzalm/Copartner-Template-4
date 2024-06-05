@@ -55,7 +55,7 @@ const Homepage = ({ token }) => {
   // const navigate = useNavigate();
 
   const handleClickLink = (link, event) => {
-    event.stopPropagation();
+    // event.stopPropagation();
     if (!token) {
       navigate("/login", { state: { link } });
     } else {
@@ -63,9 +63,9 @@ const Homepage = ({ token }) => {
     }
   };
 
-  const handleCard = (id) => {
-    window.open(`https://copartner.in/ra-detail/${id}`);
-  };
+  // const handleCard = (id) => {
+  //   window.open(`https://copartner.in/ra-detail/${id}`);
+  // };
 
   return (
     <div className="mt-4">
@@ -83,7 +83,7 @@ const Homepage = ({ token }) => {
         return (
           <section key={expert.id}>
             <div
-              onClick={() => handleCard(expert.id)}
+              onClick={() => handleClickLink(expert.telegramChannel)}
               className="content w-full border-2 rounded-2xl"
             >
               <div className="flex justify-between">
@@ -130,7 +130,7 @@ const Homepage = ({ token }) => {
                     </button>
                   </div>
                   <button    
-                    onClick={(event) => handleClickLink(expert.telegramChannel, event)}
+                    // onClick={(event) => handleClickLink(expert.telegramChannel, event)}
                     className="flex gap-2 bg-[#0081F1] rounded-full text-white justify-center items-center"
                   >
                     <img className="w-4 h-4" src={telegram} alt="" />

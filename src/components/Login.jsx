@@ -59,8 +59,8 @@ const Login = () => {
               <button onClick={handleClose} className="ms-auto">
                 <img className="w-6 h-6" src={close} alt="close" />
               </button>
-              <span className="w-[53px] h-[24px] font-[500] text-[20px] leading-[24px] mb-4">
-                Signup/Logon
+              <span className="text-center h-[24px] font-[500] text-[20px] leading-[24px] mb-4">
+                Signup/Login
               </span>
               <span className="w-[264px] h-[34px] font-[400] text-[14.4px] leading-[17px]">
                 Access your account by entering your credentials.
