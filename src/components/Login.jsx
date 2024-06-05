@@ -10,16 +10,30 @@ const Login = () => {
 
   const { link } = location.state;
 
+  const handleChange = (e) => {
+    const value = e.target.value;
+    if (value.length <= 10) {
+      setPhoneNumber(value.replace(/\D/g, ''));
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/generate-otp", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ phoneNumber }),
-      });
+      const response = await fetch(
+        "https://copartners.in:5181/api/SignIn/GenerateOTP",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            countryCode: "IN",
+            mobileNumber: phoneNumber,
+            otp: "",
+          }),
+        }
+      );
 
       if (response.ok) {
         navigate("/otp", { state: { phoneNumber, link } });
@@ -28,12 +42,13 @@ const Login = () => {
       }
     } catch (error) {
       console.error("Error generating OTP:", error);
+      setError("Failed to send OTP. Please try again.");
     }
   };
 
   const handleClose = () => {
-    navigate('/');
-  }
+    navigate("/");
+  };
 
   return (
     <div className="popup-overlay">
@@ -45,7 +60,7 @@ const Login = () => {
                 <img className="w-6 h-6" src={close} alt="close" />
               </button>
               <span className="w-[53px] h-[24px] font-[500] text-[20px] leading-[24px] mb-4">
-                Login
+                Signup/Logon
               </span>
               <span className="w-[264px] h-[34px] font-[400] text-[14.4px] leading-[17px]">
                 Access your account by entering your credentials.
@@ -56,15 +71,14 @@ const Login = () => {
               <div className="w-[290px] h-[50px]">
                 <input
                   value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  type="text"
+                  onChange={handleChange}
+                  type="number"
+                  maxLength={10}
                   placeholder="Enter your Mobile Number"
                   className="bg-[white] rounded-[10px] border border-[#18181B] w-full h-full text-black font-[400] text-[14px] p-2"
                 />
               </div>
-              <div className="text-red-500 mx-auto py-2">
-                {error}
-              </div>
+              <div className="text-red-500 mx-auto py-2">{error}</div>
 
               <button
                 onClick={handleSubmit}
