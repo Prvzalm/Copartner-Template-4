@@ -42,7 +42,7 @@ const Stock = () => {
               maskImage: "linear-gradient(rgba(0, 0, 0, 1) 70%, transparent)",
             }}
           />
-          <div className="mt-4 md:hidden">
+          {/* <div className="mt-4 md:hidden">
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSfvXlECAFh4J984zNsSwdKC7o0MSf2GKJndd7S1Lrfb4Eu9ew/viewform?vc=0&c=0&w=1&flr=0"
               target="_blank"
@@ -51,7 +51,7 @@ const Stock = () => {
             >
               Join Expert Team
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
